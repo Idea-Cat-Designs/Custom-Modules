@@ -1,0 +1,41 @@
+#icd-modal__container {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    display: block;
+    font-family: Helvetica, Arial, sans-serif;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
+}
+
+#icd-modal__parent {
+    height: 100%;
+    margin: 50px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#icd-modal__child {
+    background-color: white;
+    left: 50%;
+    margin: auto;
+    max-width: 600px;
+    padding: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    top: 50%;
+}
+
+#icd-modal__close-x {
+    color: black;
+    margin: 15px;
+    right: 0;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+}
