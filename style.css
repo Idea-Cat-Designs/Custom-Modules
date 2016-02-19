@@ -1,41 +1,100 @@
 #icd-modal__container {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
     bottom: 0;
     display: block;
-    font-family: Helvetica, Arial, sans-serif;
     left: 0;
     right: 0;
     overflow: auto;
     position: fixed;
     top: 0;
-    z-index: 99999999;
+    z-index: 2147483647;
+}
+
+#icd-modal__container * {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #4f4f4f;
+    box-sizing: border-box;
+}
+
+#icd-modal__text-container * {
+    text-align: center;
 }
 
 #icd-modal__parent {
     height: 100%;
-    margin: 50px 0;
+    padding: 50px 0;
     overflow: hidden;
     position: relative;
 }
 
 #icd-modal__child {
-    background-color: white;
+    background-color: #fff;
     left: 50%;
     margin: auto;
     max-width: 600px;
+    min-width: 500px;
     padding: 50px;
     position: absolute;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     top: 50%;
+    margin-top: -50px;
 }
 
 #icd-modal__close-x {
-    color: black;
-    margin: 15px;
+    padding: 15px 20px;
     right: 0;
     position: absolute;
     text-decoration: none;
     top: 0;
 }
+
+#icd-modal__headline {
+    margin: 0 0;
+    font-size: 28px;
+}
+
+#icd-modal__subhead {
+    font-size: 16px;
+}
+
+#icd-modal__container input {
+    padding: 10px 20px;
+    background: #eaeaea;
+    font-family: arial;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    margin: 5px 0;
+    position: relative;
+}
+
+#icd-modal__container input[type="text"], #icd-modal__container input[type="email"] {
+    width: 100%;
+    display: block;
+}
+
+#icd-modal__container input[type="text"]:focus, #icd-modal__container input[type="email"]:focus {
+    outline: none;
+    border-left: #009650 2px solid;
+}
+
+#icd-modal__container .hs-form-field > label {
+    font-size: 14px;
+    margin-top: 20px;
+    display: block;
+}
+
+#icd-modal__container .hs-form-field ul.inputs-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+#icd-modal__container .hs-form-field ul.inputs-list input {
+    margin-right: 15px;
+}
+
+
