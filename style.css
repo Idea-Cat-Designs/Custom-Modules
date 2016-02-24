@@ -29,12 +29,13 @@
 #icd-modal__child {
     background-color: #fff;
     border-radius: 3px;
-    max-width: 800px;
-    min-width: 700px;  
+    width: 60%;
+    max-width: 700px;
     margin: 50px 0;
     position: relative;
     /* border: 2px solid #23b08d; slightly darker green */
 }
+
 
 /* variations for header section */
 #icd-modal__intro {
@@ -207,3 +208,36 @@
     color: #fff;
 }
 
+
+@media (max-width: 740px) {
+    #icd-modal__child {
+        width: auto;
+        max-width: 100%;
+        margin: 50px 20px;
+        min-width: 500px;
+    }
+    #icd-modal__form {
+        padding: 0 40px 50px 40px;
+    }
+    #icd-modal__intro.icd-modal__intro--bg-style {
+        padding: 50px 40px 30px 40px;
+    }
+    #icd-modal__intro {
+        padding: 50px 40px 0 40px;
+    }
+}
+@media (max-width: 580px) {
+    #icd-modal__child {
+        width: auto;
+        min-width: 300px;
+    }
+    #icd-modal__form {
+        padding: 0 30px 50px 30px;
+    }
+    #icd-modal__intro.icd-modal__intro--bg-style {
+        padding: 50px 30px 30px 30px;
+    }
+    #icd-modal__intro {
+        padding: 50px 30px 0 30px;
+    }
+}
