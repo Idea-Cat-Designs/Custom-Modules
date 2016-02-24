@@ -28,12 +28,39 @@
 
 #icd-modal__child {
     background-color: #fff;
+    border-radius: 3px;
     max-width: 800px;
-    min-width: 700px;
-    padding: 70px 100px;
+    min-width: 700px;  
     margin: 50px 0;
     position: relative;
-    border: 2px solid #23b08d; /* slightly darker green */
+    /* border: 2px solid #23b08d; slightly darker green */
+}
+
+/* variations for header section */
+#icd-modal__intro {
+    padding: 70px 100px 0 100px;
+}
+
+#icd-modal__intro.icd-modal__intro--bg-style {
+    padding: 70px 100px 30px 100px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+#icd-modal__intro.icd-modal__intro--left-align {
+    text-align: left;
+}
+
+#icd-modal__intro.icd-modal__intro--center-align {
+    text-align: center;
+}
+
+
+
+#icd-modal__form {
+    padding: 0 100px 70px 100px;
+
 }
 
 #icd-modal__close-x {
@@ -55,11 +82,6 @@
 #icd-modal__container input {
     color: #4f4f4f;
     letter-spacing: 0.4px;
-}
-
-#icd-modal__headline, 
-#icd-modal__subhead {
-    text-align: center;
 }
 
 #icd-modal__headline {
