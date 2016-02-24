@@ -1,0 +1,82 @@
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Idea-Cat-Designs/Custom-Modules/master/style.css">  -->
+<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8080/style.css">
+
+<style>
+    #icd-modal__container {
+        display: none;    
+    }
+
+    /* custom submit button color */
+    #icd-modal__container div.hs_submit div.actions input {
+        {% if widget.submit_button_color %}
+        background: #{{ widget.submit_button_color }};
+        {% else %}
+        background: #00c997; /* green */
+        {% endif %}
+    }
+
+    /* if custom submit button color, make form focus styles match */
+    #icd-modal__container select.hs-input:focus, 
+    #icd-modal__container .hs-form-field textarea:focus, 
+    #icd-modal__container input[type="text"]:focus, 
+    #icd-modal__container input[type="email"]:focus,
+    #icd-modal__container input[type="number"]:focus,
+    #icd-modal__container input[type="file"]:focus {
+        {% if widget.submit_button_color %}
+        border-bottom: #{{ widget.submit_button_color }} 2px solid; 
+        {% else %}
+        border-bottom: #00c997 2px solid; /* green */
+        {% endif %}
+    }
+
+</style>
+
+
+<div id="icd-modal__container">
+    <div id="icd-modal__parent">
+        <div id="icd-modal__child" {% if widget.border_color %}style="border: 2px solid #{{ widget.border_color }};"{% endif %}>
+            <!-- {% textarea "my_textarea" label='Enter plain text block', value='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a urna quis lacus vehicula rutrum.', no_wrapper=True %} -->
+            <div id="icd-modal__intro" class="{{ widget.header_bg }} {{ widget.header_text_alignment }}">
+                <p id="icd-modal__headline">
+                    {{ widget.header_text }}
+                </p>
+                <p id="icd-modal__subhead">
+                    {{ widget.subheader_text }}
+                </p>
+            </div>
+            <div id="icd-modal__form">
+                <!--[if lte IE 8]>
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+                <![endif]-->
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                <script>
+                  hbspt.forms.create({ 
+                    portalId: '{{ hub_id }}',
+                    formId: '{{ widget.form_id }}',
+                    css: ''
+                  });
+                </script>
+            </div>
+            <a id="icd-modal__close-x" href>
+                &#x2715;
+            </a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/carlsednaoui/ouibounce/master/source/ouibounce.js"></script>
+
+<script>
+    $(function() {
+        ouibounce(document.getElementById('icd-modal__container'), {
+            aggressive: {{ widget.show_modal_every_time_the_user_loads_the_page }},
+            delay: 100,
+            cookieExpire: parseInt({% if widget.days_until_modal_shows_again %}{{ widget.days_until_modal_shows_again }}{% else %}7{% endif %}, 10)
+        }).fire();
+        
+        $('#icd-modal__close-x').click(function(e) {
+            e.preventDefault();
+            $('#icd-modal__container').css('display', 'none');
+        });
+    })
+</script>
