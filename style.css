@@ -12,7 +12,6 @@
 
 #icd-modal__container * {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #4f4f4f;
     box-sizing: border-box;
 }
 
@@ -21,33 +20,46 @@
 }
 
 #icd-modal__parent {
-    height: 100%;
-    padding: 50px 0;
-    overflow: hidden;
-    position: relative;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #icd-modal__child {
     background-color: #fff;
-    left: 50%;
-    margin: auto;
-    max-width: 600px;
-    min-width: 500px;
-    padding: 50px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    top: 50%;
-    margin-top: -50px;
+    max-width: 800px;
+    min-width: 700px;
+    padding: 70px 100px;
+    margin: 50px 0;
+    position: relative;
+    border: 2px solid #23b08d; /* slightly darker green */
 }
 
 #icd-modal__close-x {
-    padding: 15px 20px;
+    padding: 20px 30px;
     right: 0;
     position: absolute;
     text-decoration: none;
     top: 0;
+    font-size: 12px;
+    color: #9e9e9e;
+}
+
+/* color for all labels and text in fields */
+#icd-modal__headline, 
+#icd-modal__subhead,
+#icd-modal__container .hs-form-field label,
+#icd-modal__container select.hs-input, 
+#icd-modal__container .hs-form-field textarea, 
+#icd-modal__container input {
+    color: #4f4f4f;
+    letter-spacing: 0.4px;
+}
+
+#icd-modal__headline, 
+#icd-modal__subhead {
+    text-align: center;
 }
 
 #icd-modal__headline {
@@ -56,45 +68,120 @@
 }
 
 #icd-modal__subhead {
+    margin: 20px 0 10px 0;
     font-size: 16px;
 }
 
-#icd-modal__container input {
-    padding: 10px 20px;
-    background: #eaeaea;
-    font-family: arial;
-    font-size: 14px;
-    text-transform: uppercase;
-    border: none;
+/* padding on entire form */
+#icd-modal__container .hbspt-form {
+    padding: 10px 0;
+}
+
+/* make all form fields 100% */
+#icd-modal__container select.hs-input, 
+#icd-modal__container .hs-form-field textarea, 
+#icd-modal__container input[type="text"], 
+#icd-modal__container input[type="email"],
+#icd-modal__container input[type="number"],
+#icd-modal__container input[type="file"] {
     margin: 5px 0;
-    position: relative;
-}
-
-#icd-modal__container input[type="text"], #icd-modal__container input[type="email"] {
     width: 100%;
+    background: #eaeaea;
     display: block;
+    border-radius: 3px;
+    border-bottom: #eaeaea 2px solid;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 14px;
+    border: none;
+    border-bottom: #eaeaea 2px solid; 
 }
 
-#icd-modal__container input[type="text"]:focus, #icd-modal__container input[type="email"]:focus {
+/* focus styles for all fields */
+#icd-modal__container select.hs-input:focus, 
+#icd-modal__container .hs-form-field textarea:focus, 
+#icd-modal__container input[type="text"]:focus, 
+#icd-modal__container input[type="email"]:focus,
+#icd-modal__container input[type="number"]:focus,
+#icd-modal__container input[type="file"]:focus {
     outline: none;
-    border-left: #009650 2px solid;
+    border-bottom: #00c997 2px solid; /* green */
 }
 
+/* label styles for all fields */
 #icd-modal__container .hs-form-field > label {
     font-size: 14px;
     margin-top: 20px;
     display: block;
 }
 
+#icd-modal__container .hs-form-field span.hs-form-required {
+    padding-left: 3px;
+}
+
+/*error styles for all fields*/
+#icd-modal__container .hs-form-field ul.hs-error-msgs.inputs-list {
+    margin: 0 0;
+    padding: 0 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+#icd-modal__container .hs-form-field ul.hs-error-msgs.inputs-list label {
+    color: #c92500; /* red */
+}
+
+#icd-modal__container select.hs-input.error, #icd-modal__container select.hs-input.invalid, 
+#icd-modal__container .hs-form-field textarea.error, #icd-modal__container .hs-form-field textarea.invalid, 
+#icd-modal__container input[type="text"].error, #icd-modal__container input[type="text"].invalid, 
+#icd-modal__container input[type="email"].error, #icd-modal__container input[type="email"].invalid {
+    border-bottom: #c92500 2px solid; /* red */
+}
+
+/* list styles for checkboxes or radio buttons */
 #icd-modal__container .hs-form-field ul.inputs-list {
     list-style: none;
-    padding-left: 0;
-    margin: 5px 0 0 0;
+    padding-left: 15px;
+    margin: 5px 0;
     font-size: 14px;
+}
+
+#icd-modal__container .hs-form-field ul.inputs-list li {
+    padding: 3px 0;
+}
+
+#icd-modal__container .hs-form-field ul.inputs-list li:first-child {
+    padding-top: 0;
+}
+
+#icd-modal__container .hs-form-field ul.inputs-list li:last-child {
+    padding-bottom: 0;
 }
 
 #icd-modal__container .hs-form-field ul.inputs-list input {
     margin-right: 15px;
 }
 
+/* dropdown field styles */
+#icd-modal__container select.hs-input {
+    height: 38px;
+}
+
+/* textarea styles */
+#icd-modal__container .hs-form-field textarea {
+    height: 60px;
+}
+
+#icd-modal__container div.hs_submit div.actions input {
+    width: 100%;
+    margin: 30px 0 0 0;
+    border: none;
+    background: #00c997; /* green */
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 11px 20px;
+    color: #fff;
+}
 
