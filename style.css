@@ -1,13 +1,17 @@
 #icd-modal__container {
     background-color: rgba(0, 0, 0, 0.2);
     bottom: 0;
-    display: block;
+    display: none; 
     left: 0;
     right: 0;
     overflow: auto;
     position: fixed;
     top: 0;
     z-index: 2147483647;
+}
+
+#icd-modal__container.icd-modal__container--dev-mode {
+    display: block;
 }
 
 #icd-modal__container * {
