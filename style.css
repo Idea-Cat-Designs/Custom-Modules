@@ -14,6 +14,71 @@
     display: block;
 }
 
+/* dark styles */
+#icd-modal__container.icd-modal__container--dark #icd-modal__intro.icd-modal__intro--bg-style,
+#icd-modal__container.icd-modal__container--dark select.hs-input, 
+#icd-modal__container.icd-modal__container--dark .hs-form-field textarea, 
+#icd-modal__container.icd-modal__container--dark input[type="text"], 
+#icd-modal__container.icd-modal__container--dark input[type="email"], 
+#icd-modal__container.icd-modal__container--dark input[type="number"], 
+#icd-modal__container.icd-modal__container--dark input[type="file"] {
+    background: #333333; 
+}
+
+#icd-modal__container.icd-modal__container--dark select.hs-input, 
+#icd-modal__container.icd-modal__container--dark .hs-form-field textarea, 
+#icd-modal__container.icd-modal__container--dark input[type="text"], 
+#icd-modal__container.icd-modal__container--dark input[type="email"], 
+#icd-modal__container.icd-modal__container--dark input[type="number"], 
+#icd-modal__container.icd-modal__container--dark input[type="file"] {
+    border-bottom: #333333 2px solid;
+}
+
+#icd-modal__container.icd-modal__container--dark #icd-modal__headline, 
+#icd-modal__container.icd-modal__container--dark #icd-modal__subhead, 
+#icd-modal__container.icd-modal__container--dark .hs-form-field label, 
+#icd-modal__container.icd-modal__container--dark select.hs-input, 
+#icd-modal__container.icd-modal__container--dark .hs-form-field textarea, 
+#icd-modal__container.icd-modal__container--dark input {
+    color: #d6d2c7;
+}
+
+#icd-modal__container.icd-modal__container--dark #icd-modal__form {
+    background: #3A3A3A;
+}
+
+
+/* light styles */
+#icd-modal__container.icd-modal__container--light #icd-modal__intro.icd-modal__intro--bg-style {
+    background: #f7f7f7;
+}
+
+#icd-modal__container.icd-modal__container--light select.hs-input, 
+#icd-modal__container.icd-modal__container--light .hs-form-field textarea, 
+#icd-modal__container.icd-modal__container--light input[type="text"], 
+#icd-modal__container.icd-modal__container--light input[type="email"], 
+#icd-modal__container.icd-modal__container--light input[type="number"], 
+#icd-modal__container.icd-modal__container--light input[type="file"] {
+    background: #eaeaea;
+    border-bottom: #eaeaea 2px solid;
+}
+
+#icd-modal__container.icd-modal__container--light #icd-modal__headline, 
+#icd-modal__container.icd-modal__container--light #icd-modal__subhead, 
+#icd-modal__container.icd-modal__container--light .hs-form-field label, 
+#icd-modal__container.icd-modal__container--light select.hs-input, 
+#icd-modal__container.icd-modal__container--light .hs-form-field textarea, 
+#icd-modal__container.icd-modal__container--light input {
+    color: #4f4f4f;
+}
+
+#icd-modal__container.icd-modal__container--light #icd-modal__form {
+    background: #fff;
+}
+
+
+
+/* general styles */
 #icd-modal__container * {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-sizing: border-box;
@@ -48,7 +113,7 @@
 
 #icd-modal__intro.icd-modal__intro--bg-style {
     padding: 70px 100px 30px 100px;
-    background: #f7f7f7;
+    /*background: #f7f7f7;*/
     border-bottom: 1px solid #e0e0e0;
     overflow: hidden;
 }
@@ -85,8 +150,8 @@
 #icd-modal__container select.hs-input, 
 #icd-modal__container .hs-form-field textarea, 
 #icd-modal__container input {
-    color: #4f4f4f;
-    letter-spacing: 0.4px;
+    /*color: #4f4f4f;*/
+    letter-spacing: 0.5px;
 }
 
 #icd-modal__headline {
@@ -113,10 +178,10 @@
 #icd-modal__container input[type="file"] {
     margin: 5px 0;
     width: 100%;
-    background: #eaeaea;
+    /*background: #eaeaea;*/
     display: block;
     border-radius: 3px;
-    border-bottom: #eaeaea 2px solid;
+    /*border-bottom: #eaeaea 2px solid;*/
     padding: 10px 20px;
     position: relative;
     font-size: 14px;
@@ -212,6 +277,9 @@
     color: #fff;
 }
 
+#icd-modal__container div.hs_submit div.actions input:focus {
+    outline: none;
+}
 
 @media (max-width: 740px) {
     #icd-modal__child {

@@ -27,7 +27,7 @@
 </style>
 
 
-<div id="icd-modal__container" {% if widget.dev_mode %}class="{{ widget.dev_mode }}"{% endif %}>
+<div id="icd-modal__container" class="{{ widget.dev_mode }} {{ widget.color_scheme }}">
     <div id="icd-modal__parent">
         <div id="icd-modal__child" {% if widget.border_color %}style="border: 2px solid #{{ widget.border_color }};"{% endif %}>
             <div id="icd-modal__intro" class="{{ widget.header_bg }} {{ widget.header_text_alignment }}">
