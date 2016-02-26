@@ -103,6 +103,14 @@
     background: #fff;
 }
 
+#icd-modal__container.icd-modal__container--light #icd-modal__child.icd-modal__no-padding #icd-modal__cta-wrapper {
+    background: transparent;
+}
+
+#icd-modal__container.icd-modal__container--light #icd-modal__child.icd-modal__no-padding .cta_button {
+    margin: 0 0 !important;
+}
+
 #icd-modal__container.icd-modal__container--light div.hs_submit div.actions input {
     background: #00c997; /* green */
 }
