@@ -50,8 +50,17 @@
 }
 
 #icd-modal__container.icd-modal__container--dark #icd-modal__form,
-#icd-modal__container.icd-modal__container--dark #icd-modal__intro {
+#icd-modal__container.icd-modal__container--dark #icd-modal__intro, 
+#icd-modal__container.icd-modal__container--dark #icd-modal__cta-wrapper {
     background: #3A3A3A;
+}
+
+#icd-modal__container.icd-modal__container--dark #icd-modal__child.icd-modal__no-padding #icd-modal__cta-wrapper {
+    background: transparent;
+}
+
+#icd-modal__container.icd-modal__container--dark #icd-modal__child.icd-modal__no-padding .cta_button {
+    margin: 0 0 !important;
 }
 
 #icd-modal__container.icd-modal__container--dark div.hs_submit div.actions input {
@@ -89,7 +98,8 @@
 }
 
 #icd-modal__container.icd-modal__container--light #icd-modal__form,
-#icd-modal__container.icd-modal__container--light #icd-modal__intro {
+#icd-modal__container.icd-modal__container--light #icd-modal__intro,
+#icd-modal__container.icd-modal__container--light #icd-modal__cta-wrapper {
     background: #fff;
 }
 
@@ -123,6 +133,12 @@
     position: relative;
 }
 
+#icd-modal__child.icd-modal__no-padding {
+    background-color: transparent;
+    width: auto;
+    max-width: none;
+}
+
 /* variations for header section */
 #icd-modal__intro {
     padding: 70px 100px 0 100px;
@@ -142,9 +158,30 @@
     text-align: center;
 }
 
-#icd-modal__form {
+#icd-modal__form, #icd-modal__cta-wrapper {
     padding: 0 100px 70px 100px;
+}
 
+#icd-modal__cta-wrapper {
+    padding-top: 30px;
+}
+
+#icd-modal__cta-wrapper.icd-modal__no-intro {
+    padding-top: 70px;
+}
+
+#icd-modal__child.icd-modal__no-padding #icd-modal__cta-wrapper {
+    padding: 0 0;
+}
+
+#icd-modal__child.icd-modal__no-padding #icd-modal__intro {
+    display: none;
+}
+
+#icd-modal__child.icd-modal__no-padding #icd-modal__close-x {
+    padding: 13px 30px;
+    right: -30px;
+    top: -40px;
 }
 
 #icd-modal__close-x {
@@ -289,8 +326,11 @@
         margin: 50px 20px;
         min-width: 500px;
     }
-    #icd-modal__form {
+    #icd-modal__form, #icd-modal__cta-wrapper {
         padding: 0 40px 50px 40px;
+    }
+    #icd-modal__cta-wrapper.icd-modal__no-intro {
+        padding-top: 50px;
     }
     #icd-modal__intro.icd-modal__intro--bg-style {
         padding: 50px 40px 30px 40px;
@@ -304,8 +344,11 @@
         width: auto;
         min-width: 300px;
     }
-    #icd-modal__form {
+    #icd-modal__form, #icd-modal__cta-wrapper {
         padding: 0 30px 50px 30px;
+    }
+    #icd-modal__cta-wrapper.icd-modal__no-intro {
+        padding-top: 30px;
     }
     #icd-modal__intro.icd-modal__intro--bg-style {
         padding: 50px 30px 30px 30px;
